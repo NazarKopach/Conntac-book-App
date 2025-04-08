@@ -1,0 +1,22 @@
+.button_user {
+  padding: 8px;
+  margin: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-align: center;
+  border: none;
+}
+
+.button_user:hover {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+.text_user {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}

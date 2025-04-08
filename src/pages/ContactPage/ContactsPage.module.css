@@ -1,0 +1,10 @@
+.contacts_page_div {
+  background: white;
+  padding-bottom: 100%;
+}
+
+.contact_page_title.contact_page_title {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}

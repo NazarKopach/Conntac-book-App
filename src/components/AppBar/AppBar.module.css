@@ -1,0 +1,5 @@
+.app_bar_header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(46, 39, 39);
+}
