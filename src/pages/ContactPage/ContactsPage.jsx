@@ -14,7 +14,7 @@ export const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.contacts_page_div}>
+    <div>
       <h1 className={styles.contact_page_title}>Phonebook</h1>
       <ContactForm />
       <SearchBox />

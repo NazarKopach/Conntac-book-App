@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { contactsReducer } from "./contacts/slice";
 import { filtersReducer } from "./filters/slice";
 import { authReducer } from "./auth/slice";
+import themeReducer from "./themaChange/themeSlice";
 import {
   persistStore,
   persistReducer,
@@ -31,6 +32,7 @@ export const store = configureStore({
     contacts: persistReducer(contactsConfig, contactsReducer),
     filters: filtersReducer,
     auth: persistReducer(authConfig, authReducer),
+    theme: themeReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

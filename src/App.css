@@ -1,0 +1,14 @@
+body[data-theme="dark"] {
+  background-color: #514545;
+  color: rgb(238, 238, 197);
+}
+
+body[data-theme="light"] {
+  background-color: rgb(238, 238, 197);
+  color: rgb(0, 0, 0);
+}
+
+button[data-theme="dark"] {
+  background-color: white;
+  color: black;
+}

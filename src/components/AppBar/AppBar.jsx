@@ -4,7 +4,8 @@ import { AuthNav } from "../AuthNav/AuthNav";
 import { useSelector } from "react-redux";
 import { selectUserIsLoggedIn } from "../../redux/auth/selectors";
 import style from "./AppBar.module.css";
-import BtnTema from "../BtnTema/BtnTema";
+
+import ThemeToggler from "../ToggleTheme/ToggleTheme.jsx";
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectUserIsLoggedIn);
@@ -12,7 +13,7 @@ export const AppBar = () => {
   return (
     <header className={style.app_bar_header}>
       <Navigation />
-      {isLoggedIn && <BtnTema />}
+      {isLoggedIn && <ThemeToggler />}
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
   );

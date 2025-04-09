@@ -12,9 +12,16 @@ import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage.jsx"
 import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 import { ContactsPage } from "./pages/ContactPage/ContactsPage.jsx";
 
+import "./App.css";
+
 function App() {
   const isRefreshing = useSelector(selectUserIsRefreshing);
+  const theme = useSelector((state) => state.theme.theme);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", theme);
+  }, [theme]);
 
   useEffect(() => {
     dispatch(apiGetCurrentUser());
