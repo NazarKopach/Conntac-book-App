@@ -11,6 +11,7 @@ import { HomePage } from "./pages/HomePage/HomePage.jsx";
 import { RegistrationPage } from "./pages/RegistrationPage/RegistrationPage.jsx";
 import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 import { ContactsPage } from "./pages/ContactPage/ContactsPage.jsx";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage.jsx";
 
 import "./App.css";
 
@@ -43,6 +44,10 @@ function App() {
           <Route
             path="/login"
             element={<RestrictedRoute component={<LoginPage />} />}
+          />
+          <Route
+            path="*"
+            element={<RestrictedRoute component={<NotFoundPage />} />}
           />
           <Route
             path="/contacts"

@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { RegisterUserSchema } from "../../utils/schemas";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { apiRegisterUser } from "../../redux/auth/operations";
 import style from "./RegistrationForm.module.css";
 
@@ -12,7 +12,7 @@ const INITIAL_VALUES = {
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
-
+  const isLoading = useSelector((state) => state.auth.isLoading);
   const handleSubmit = (values, actions) => {
     dispatch(apiRegisterUser(values));
     actions.resetForm();
@@ -69,7 +69,7 @@ export const RegistrationForm = () => {
             />
           </label>
           <button className={style.button} type="submit">
-            Sign Up
+            {isLoading ? "Singing Up..." : "Sign Up"}
           </button>
         </Form>
       </Formik>
