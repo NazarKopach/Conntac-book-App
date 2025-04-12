@@ -2,6 +2,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { RegisterUserSchema } from "../../utils/schemas";
 import { useDispatch, useSelector } from "react-redux";
 import { apiRegisterUser } from "../../redux/auth/operations";
+import { toast } from "react-toastify";
+
 import style from "./RegistrationForm.module.css";
 
 const INITIAL_VALUES = {
@@ -13,9 +15,16 @@ const INITIAL_VALUES = {
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.auth.isLoading);
-  const handleSubmit = (values, actions) => {
-    dispatch(apiRegisterUser(values));
-    actions.resetForm();
+
+  const handleSubmit = async (values, actions) => {
+    try {
+      await dispatch(apiRegisterUser(values)).unwrap();
+      actions.resetForm();
+      toast.success("Successful registration!");
+    } catch (err) {
+      console.log(err.errorMessage);
+      toast.error(err.message || "Something went wrong...");
+    }
   };
 
   return (

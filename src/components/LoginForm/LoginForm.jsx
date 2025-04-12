@@ -2,7 +2,6 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { LoginUserSchema } from "../../utils/schemas";
 import { useDispatch, useSelector } from "react-redux";
 import { apiLoginUser } from "../../redux/auth/operations";
-import toast, { Toaster } from "react-hot-toast";
 import style from "./LoginForm.module.css";
 import { selectUserIsLoading } from "../../redux/auth/selectors";
 
@@ -14,7 +13,6 @@ const INITIAL_VALUES = {
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectUserIsLoading);
-  const error = useSelector((state) => state.auth.error);
 
   const handleSubmit = (values, actions) => {
     dispatch(apiLoginUser(values));

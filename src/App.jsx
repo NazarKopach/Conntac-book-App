@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { apiGetCurrentUser } from "./redux/auth/operations";
 import { PrivateRoute } from "./components/PrivateRoute/PrivateRoute";
 import { RestrictedRoute } from "./components/RestrictedRoute/RestrictedRoute";
+import { ToastContainer } from "react-toastify";
 
 import { Layout } from "./components/Layout/Layout";
 import { HomePage } from "./pages/HomePage/HomePage.jsx";
@@ -55,6 +56,7 @@ function App() {
           />
         </Routes>
       </Layout>
+      <ToastContainer position="top-center" />
     </div>
   );
 }

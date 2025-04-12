@@ -19,6 +19,7 @@ const INITIAL_STATE = {
 const authSlice = createSlice({
   name: "auth",
   initialState: INITIAL_STATE,
+
   extraReducers: (builder) =>
     builder
       .addCase(apiRegisterUser.pending, (state) => {
