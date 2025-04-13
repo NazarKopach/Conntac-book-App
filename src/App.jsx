@@ -15,6 +15,7 @@ import { ContactsPage } from "./pages/ContactPage/ContactsPage.jsx";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage.jsx";
 
 import "./App.css";
+import Loader from "./components/Loader/Loader.jsx";
 
 function App() {
   const isRefreshing = useSelector(selectUserIsRefreshing);
@@ -30,7 +31,11 @@ function App() {
   }, [dispatch]);
 
   if (isRefreshing) {
-    return <div>Refreshing...</div>;
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   }
 
   return (
