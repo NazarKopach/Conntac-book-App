@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const authInstance = axios.create({
-  baseURL: "https://connections-api.goit.global/",
+  baseURL: "https://connections-api.goit.global",
 });
 
 export const setToken = (token) => {
@@ -18,7 +18,6 @@ export const apiRegisterUser = createAsyncThunk(
   async (userData, thunkApi) => {
     try {
       const { data } = await authInstance.post("/users/signup", userData);
-
       setToken(data.token);
       return data;
     } catch (error) {
@@ -28,7 +27,7 @@ export const apiRegisterUser = createAsyncThunk(
 );
 
 export const apiLoginUser = createAsyncThunk(
-  "auth/login",
+  "auth/logins",
   async (userData, thunkApi) => {
     try {
       const { data } = await authInstance.post("/users/login", userData);
