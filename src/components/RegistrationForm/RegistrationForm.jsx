@@ -41,7 +41,7 @@ export const RegistrationForm = () => {
               type="text"
               name="name"
               className={style.input}
-              placeholder="example name"
+              placeholder="name"
             />
             <ErrorMessage
               className={style.errorMessage}
