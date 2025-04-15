@@ -22,7 +22,6 @@ export const RegistrationForm = () => {
       actions.resetForm();
       toast.success("Successful registration!");
     } catch (err) {
-      console.log(err.errorMessage);
       toast.error(err.message || "Something went wrong...");
     }
   };

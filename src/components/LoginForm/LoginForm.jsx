@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { apiLoginUser } from "../../redux/auth/operations";
 import style from "./LoginForm.module.css";
 import { selectUserIsLoading } from "../../redux/auth/selectors";
+import { toast } from "react-toastify";
 
 const INITIAL_VALUES = {
   email: "",
@@ -14,9 +15,15 @@ export const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectUserIsLoading);
 
-  const handleSubmit = (values, actions) => {
-    dispatch(apiLoginUser(values));
-    actions.resetForm();
+  const handleSubmit = async (values, actions) => {
+    try {
+      await dispatch(apiLoginUser(values)).unwrap();
+      actions.resetForm();
+    } catch (err) {
+      const message = err.message || "Something went wrong...";
+      actions.setStatus(message);
+      toast.error(message);
+    }
   };
 
   return (

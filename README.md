@@ -2,9 +2,10 @@ React + Vite
 
 📖 CONTACT BOOK
 
-Contact Book - this is the frontend part of a web application for a car rental company. Users can browse a catalog of available cars, filter them by criteria, add to favorites, and book.
+Contact Book - this is the interface part of a web application for working with a private collection of contacts. The user can create their own account, add or remove contacts from their own collection, as well as filter by name or change the theme of the application.
 
 Deploy on https://conntac-book-app.vercel.app/
+
 Repository on GitHub https://github.com/NazarKopach/Conntac-book-App
 
 MAIN FUNCTION
