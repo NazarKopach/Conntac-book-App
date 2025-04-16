@@ -1,5 +1,11 @@
 .contact_page_title.contact_page_title {
-  margin: 0;
-  padding: 20px;
-  text-align: center;
+  margin-left: 50px;
+}
+
+@media screen and (min-width: 500px) {
+  .contact_page_title.contact_page_title {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
 }

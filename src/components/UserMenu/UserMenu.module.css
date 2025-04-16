@@ -1,3 +1,6 @@
+.user_menu_div {
+}
+
 .button_user {
   padding: 8px;
   margin: 10px;
@@ -17,7 +20,14 @@
 }
 
 .text_user {
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
+  display: none;
+}
+
+@media screen and (min-width: 500px) {
+  .text_user {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+  }
 }
